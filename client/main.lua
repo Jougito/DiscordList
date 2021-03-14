@@ -3,6 +3,13 @@
 --       por Jougito        --
 ------------------------------
 
+local pList = 0
+
+RegisterNetEvent('DiscordList:CallBack')
+AddEventHandler('DiscordList:CallBack', function(pCount)
+    pList = pCount
+end)
+
 Citizen.CreateThread(function()
     while true do
         SetDiscordAppId(Config.AppId)
@@ -42,7 +49,8 @@ Citizen.CreateThread(function()
             SetDiscordRichPresenceAction(1, Config.b2Name, Config.b2Url)
         end
 
-        local pList = #GetActivePlayers()
+        TriggerServerEvent('DiscordList:PlayersCount')
+
         SetRichPresence(pList .. ' de ' .. Config.pMax ..' jugadores')
 
         Citizen.Wait(Config.Reload * 1000)

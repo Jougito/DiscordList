@@ -53,9 +53,15 @@ else
     end
 end
 
+RegisterServerEvent('DiscordList:PlayersCount')
+AddEventHandler('DiscordList:PlayersCount', function()
+    local pOnline = GetNumPlayerIndices()
+    TriggerClientEvent('DiscordList:CallBack', source, pOnline)
+end)
+
 -- Version Checking - DON'T TOUCH THIS
 
-local CurrentVersion = '1.0.1'
+local CurrentVersion = '1.0.2'
 local GithubResourceName = 'DiscordList'
 
 PerformHttpRequest('https://raw.githubusercontent.com/Jougito/FiveM_Resources/master/' .. GithubResourceName .. '/VERSION', function(Error, NewestVersion, Header)
