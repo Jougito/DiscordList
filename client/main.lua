@@ -12,6 +12,7 @@ Citizen.CreateThread(function()
         if Config.cActive then
             local pName = GetPlayerName(PlayerId())
             local pID = GetPlayerServerId(PlayerId())
+            
             if Config.sActive and Config.iActive then
                 SetDiscordRichPresenceAssetText(pName .. ' - ID: ' .. pID)
             elseif Config.sActive then
@@ -31,6 +32,14 @@ Citizen.CreateThread(function()
         else
             SetDiscordRichPresenceAssetSmall()
             SetDiscordRichPresenceAssetSmallText()
+        end
+
+        if Config.b1Name ~= '' then
+            SetDiscordRichPresenceAction(0, Config.b1Name, Config.b1Url)
+        end
+
+        if Config.b2Name ~= '' then
+            SetDiscordRichPresenceAction(1, Config.b2Name, Config.b2Url)
         end
 
         local pList = #GetActivePlayers()

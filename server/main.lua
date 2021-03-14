@@ -3,40 +3,59 @@
 --       por Jougito        --
 ------------------------------
 
-local check = 1
+local nChecks = 0
 
 -- Config Check
 
 if Config.AppId == nil or Config.AppId == '' then
     print('^6[DiscordList] ^5App ID^0 is ^8not^0 be set')
-    check = 0
-    
+    nChecks = nChecks + 1 
 end
 
 if Config.AppImage == nil or Config.AppImage == '' then
     print('^6[DiscordList] ^5App Image^0 is ^8not^0 be set')
-    check = 0
+    nChecks = nChecks + 1
 end
 
 if Config.AppText  == nil or Config.AppText == '' then
     print('^6[DiscordList] ^5App Text^0 is ^8not^0 be set')
-    check = 0
+    nChecks = nChecks + 1
 end
 
 if Config.lActive and (Config.lAppImage == nil or Config.lAppImage == '') then
     print('^6[DiscordList] ^5App Small Image^0 is ^8not^0 be set')
-    check = 0
+    nChecks = nChecks + 1
 end
 
-if check == 1 then
-    print('^6[DiscordList]^0 All checks have ^2passed successfully^0')
+if Config.b1Name ~= '' then
+    if Config.b1Url == nil or Config.b1Url == '' then
+        print('^6[DiscordList] ^5Button 1 URL^0 is ^8not^0 be set')
+        nChecks = nChecks + 1
+    end
+end
+
+if Config.b2Name ~= '' then
+    if Config.b2Url == nil or Config.b2Url == '' then
+        print('^6[DiscordList] ^5Button 2 URL^0 is ^8not^0 be set')
+        nChecks = nChecks + 1
+    end
+end
+
+if nChecks == 0 then
+    print('^6[DiscordList]^0 All checks ^2have passed^0 successfully')
 else
-    print('^6[DiscordList]^0 One or more checks have ^8not passed successfully^0')
+    if nChecks == 1 then
+        print('^0')
+        print('^6[DiscordList]^0 One check ^8has not passed^0 successfully')
+    elseif nChecks > 1 then
+        print('^0')
+        print('^6[DiscordList]^0 ' .. nChecks .. ' checks ^8have not passed^0 successfully')
+    end
 end
 
 -- Version Checking - DON'T TOUCH THIS
 
-local CurrentVersion = '1.0.0'
+local CurrentVersion = '1.0.1'
 local GithubResourceName = 'DiscordList'
 
 PerformHttpRequest('https://raw.githubusercontent.com/Jougito/FiveM_Resources/master/' .. GithubResourceName .. '/VERSION', function(Error, NewestVersion, Header)

@@ -18,3 +18,9 @@ Config.sActive      = true -- Habilita nombre perfil Steam
 Config.iActive      = true -- Habilita la ID del servidor
 
 Config.Reload       = 60 -- Tiempo en segundos que tarda en actualizarse
+
+Config.b1Name       = '' -- Nombre botón 1
+Config.b1Url        = '' -- URL botón 1
+
+Config.b2Name       = '' -- Nombre botón 2
+Config.b2Url        = '' -- URL botón 2

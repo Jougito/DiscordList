@@ -6,7 +6,7 @@ author 'Jougito'
 
 description 'Script para establecer una presencia de juego custom'
 
-version '1.0.0'
+version '1.0.1'
 
 client_scripts {
     'config.lua',
