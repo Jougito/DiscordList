@@ -1,7 +1,13 @@
-------------------------------
--- Presencia Custom Discord --
---       por Jougito        --
-------------------------------
+-------------------------------------------------------------
+--                 Designed and scripted by                --
+--       ::::::::                                          --
+--           :+:                                           --
+--          +:+  +:+:+:+ +:   :+ +:+:+:+ +: +:+:+: +:+:+:+ --
+--         +#+  +#   +# +#   #+ +#      +#   +#   +#   #+  --
+--        +#+  +#   +# +#   #+ +#  +#+ +#   +#   +#   #+   --
+--  #+#  #+#  #+   #+ #+   +# #+   +# #+   #+   #+   +#    --
+-- ########  ####### ####### ####### ##   ##   #######     --
+-------------------------------------------------------------
 
 local pList = 0
 
@@ -51,7 +57,7 @@ Citizen.CreateThread(function()
 
         TriggerServerEvent('DiscordList:PlayersCount')
 
-        SetRichPresence(pList .. ' de ' .. Config.pMax ..' jugadores')
+        SetRichPresence(pList .. ' ' .. _U('of') .. ' ' .. Config.pMax .. ' ' .. _T('players'))
 
         Citizen.Wait(Config.Reload * 1000)
     end

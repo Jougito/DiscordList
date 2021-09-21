@@ -1,7 +1,13 @@
-------------------------------
--- Presencia Custom Discord --
---       por Jougito        --
-------------------------------
+-------------------------------------------------------------
+--                 Designed and scripted by                --
+--       ::::::::                                          --
+--           :+:                                           --
+--          +:+  +:+:+:+ +:   :+ +:+:+:+ +: +:+:+: +:+:+:+ --
+--         +#+  +#   +# +#   #+ +#      +#   +#   +#   #+  --
+--        +#+  +#   +# +#   #+ +#  +#+ +#   +#   +#   #+   --
+--  #+#  #+#  #+   #+ #+   +# #+   +# #+   #+   #+   +#    --
+-- ########  ####### ####### ####### ##   ##   #######     --
+-------------------------------------------------------------
 
 local nChecks = 0
 
@@ -61,7 +67,7 @@ end)
 
 -- Version Checking - DON'T TOUCH THIS
 
-local CurrentVersion = '1.0.2'
+local CurrentVersion = '1.0.3'
 local GithubResourceName = 'DiscordList'
 
 PerformHttpRequest('https://raw.githubusercontent.com/Jougito/FiveM_Resources/master/' .. GithubResourceName .. '/VERSION', function(Error, NewestVersion, Header)

@@ -4,9 +4,9 @@ game 'gta5'
 
 author 'Jougito'
 
-description 'Script para establecer una presencia de juego custom'
+description 'Script para establecer una presencia de juego custom en Discord'
 
-version '1.0.2'
+version '1.0.3'
 
 client_scripts {
     'config.lua',
